@@ -1,2 +1,2 @@
 # BackTest
-The repository where are going to be tests to prove the API
+The repository where is going to be the tests to prove the API
