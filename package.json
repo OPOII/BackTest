@@ -1,0 +1,24 @@
+{
+  "name": "books-back-test",
+  "version": "1.0.0",
+  "description": "The repository where is going to be the tests to prove the API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OPOII/BackTest.git"
+  },
+  "author": "Bryan Camilo Grueso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OPOII/BackTest/issues"
+  },
+  "homepage": "https://github.com/OPOII/BackTest#readme",
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
