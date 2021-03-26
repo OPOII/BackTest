@@ -10,6 +10,7 @@ const book={"id":"80","name":"Soft Skills: The Software Developer's Life Manual"
         response=await axios.post(url, book);
         newList=await axios.get(url);
         bookID=book.id;
+        console.log(response.status);
         });
         after(async ()=>{
             deleteResponse = await axios.delete(`${url}/${bookID}`);
