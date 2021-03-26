@@ -2,10 +2,10 @@ const axios = require('axios');
 const { expect } = require('chai');
 
 let response;
-
+const url = "https://electivacicd-icesi.herokuapp.com/books";
 describe("When the user wants to see the lists of the books",()=>{
     before(async ()=>{
-        response=await axios.get('https://electivacicd-icesi.herokuapp.com/books');
+        response=await axios.get(url);
     });
     it("It must return an OK status code",()=>{
         //console.log(response);
