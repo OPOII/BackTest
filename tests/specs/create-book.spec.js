@@ -2,6 +2,8 @@ const axios = require('axios');
 const { expect } = require('chai');
 
 let response;
+let deleteResponse;
+let postBook;
 const url = "https://electivacicd-icesi.herokuapp.com/books";
 const book={"id":"80","name":"Soft Skills: The Software Developer's Life Manual","author":"John Sonmez"}
     describe('When the user wants to create a book',()=>{
@@ -9,16 +11,23 @@ const book={"id":"80","name":"Soft Skills: The Software Developer's Life Manual"
         oldList=await axios.get(url);
         response=await axios.post(url, book);
         newList=await axios.get(url);
-        bookID=book.id;
+        bookID=response.data.id;
+        postBook=response.status;
+        console.log(bookID);
         console.log(response.status);
+        console.log(oldList.data.length);
+        console.log(newList.data.length);    
         });
         after(async ()=>{
             deleteResponse = await axios.delete(`${url}/${bookID}`);
-            expect(deleteResponse.status).eql(200);
+            if(deleteResponse.status === 200){
+                console.log("Data deleted successfully");
+            }else{
+                console.log("Error removing data");
+            }
         });
-        
         it('It should return the create status(OK)',()=>{
-            expect(response.status).eql(200);
+            expect(postBook).eql(200);
         });
         it('Validate that the book was created',()=>{
             const createdBook=response.data;
