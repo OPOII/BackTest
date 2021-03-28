@@ -5,7 +5,7 @@ let response;
 let deleteResponse;
 let postBook;
 const url = "https://electivacicd-icesi.herokuapp.com/books";
-const book={"id":"80","name":"Soft Skills: The Software Developer's Life Manual","author":"John Sonmez"}
+const book={"name":"Soft Skills: The Software Developer's Life Manual","author":"John Sonmez"}
     describe('When the user wants to create a book',()=>{
         before(async()=>{
         oldList=await axios.get(url);
@@ -21,9 +21,9 @@ const book={"id":"80","name":"Soft Skills: The Software Developer's Life Manual"
         after(async ()=>{
             deleteResponse = await axios.delete(`${url}/${bookID}`);
             if(deleteResponse.status === 200){
-                console.log("Data deleted successfully");
+                console.log("The book was succesfully deleted");
             }else{
-                console.log("Error removing data");
+                console.log("Something was wrong");
             }
         });
         it('It should return the create status(OK)',()=>{
